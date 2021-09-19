@@ -1,3 +1,10 @@
+from discord.ext import commands
+
+from bs4 import BeautifulSoup
+from urllib.request import Request, urlopen
+import re
+
+
 def jokesulang(self):
   req = Request("https://v2.jokeapi.dev/joke/Any?format=txt  ")
   html_page = urlopen(req)

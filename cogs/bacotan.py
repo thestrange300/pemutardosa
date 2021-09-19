@@ -2,9 +2,6 @@ import discord
 import random
 from discord.ext import commands
 
-from bs4 import BeautifulSoup
-from urllib.request import Request, urlopen
-import re
 
 guild_list=[]
 isi_colek=['hayo, kok lagi buka internet positif ','WOIII ','Assalamualaikum ','Assalamualaika ','**PUSH RANK TEROSS** ','Pantes jomblo, diceluk ga bales ','**KOCOK TERUS TUH BATANGG** ','Bangun woy ayo mulung ','Dih dikit-dikit afk ']
