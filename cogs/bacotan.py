@@ -2,6 +2,10 @@ import discord
 import random
 from discord.ext import commands
 
+from bs4 import BeautifulSoup
+from urllib.request import Request, urlopen
+import re
+
 guild_list=[]
 isi_colek=['hayo, kok lagi buka internet positif ','WOIII ','Assalamualaikum ','Assalamualaika ','**PUSH RANK TEROSS** ','Pantes jomblo, diceluk ga bales ','**KOCOK TERUS TUH BATANGG** ','Bangun woy ayo mulung ','Dih dikit-dikit afk ']
 isi_tanya=['Oh ya jelas dong', 'Boleh-boleh', 'Ya','100% setuju','BUETULL','Setuju kali aing','Hmm.. 75% setuju lah','Lebih condong ke setuju sih','Lagi mager, ketik lagi sono','Gausa kepo napa sih','Gamau, lu jahat','Netral ajadah','50-50 dah','Males jawab,mending tidur','Hmm.. lebih ke gak setuju','Orrraa setuju','Jelas gak setuju','G','100% tidak setuju','GA SETUJU FIX VALID NO DEBAT']
@@ -49,7 +53,6 @@ class bacotan(commands.Cog):
     @commands.command(brief="saran untuk kalian yang gabut",help = "cie liat help")
     async def gabut(self,ctx):
         await ctx.channel.send(random.choice(isi_gabut))
-   
 
 def setup(bot):
     bot.add_cog(bacotan(bot))
