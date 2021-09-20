@@ -60,7 +60,7 @@ class Joke(commands.Cog):
         reloadsr(self)
         await ctx.channel.send(embed=embed)    
         
-    @commands.command(brief="usage = wur <text> ",help = "What's Ur Robot bakalan nampilin robot random sesuai textmu.")
+    @commands.command(brief="usage = wur <text> ",help = "What's Ur Robot bakalan nampilin robot random sesuai textmu. Usage = wur <text>")
     async def wur(self,ctx,*,question):
         embed=discord.Embed(title=f"Robot dari {question}",color=0x56f74b)
         tmp= f"https://robohash.org/{question}"
