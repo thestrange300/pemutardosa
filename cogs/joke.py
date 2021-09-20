@@ -60,6 +60,14 @@ class Joke(commands.Cog):
         reloadsr(self)
         await ctx.channel.send(embed=embed)    
 
+    @commands.command(brief="usage = wur <text> ",help = "What's Ur Robot bakalan nampilin robot random sesuai textmu.")
+    async def wur(self,ctx,*,question):
+        embed=discord.Embed(title="Inilah bentuk wajahmu :",color=0x56f74b)
+        tmp= f"https://robohash.org/{question}"
+        embed.set_image(url = tmp)
+        embed.set_footer(text="Pengingat Dosa",icon_url=self.bot.user.avatar_url) 
+        await ctx.channel.send(embed=embed) 
+
 
 def setup(bot):
     bot.add_cog(Joke(bot))
