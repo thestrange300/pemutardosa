@@ -9,7 +9,7 @@ isi_tanya=['Oh ya jelas dong', 'Boleh-boleh', 'Ya','100% setuju','BUETULL','Setu
 isi_gatcha=["Menurut saya sih A",'Condong ke B sih','Menurut bot jawabannya adalah C','Bisa dipastikan D','Mungkin jawabannya E''Udah A aja','Udah B aja','Udah C aja','Udah D aja','Udah E aja','Kayaknya A seh','Kira-kira B','Bisa jadi C','Keliatannya D','Feelingku sih E','Coba jawab A aja','Coba jawab B aja','Coba jawab C aja','Coba jawab D aja','Coba jawab E aja','Susah skip','Gatau keknya, skip','Doa aja, saya gabisa ngeramal :D','Tutup laptop aja','Pusying ane, gatau']
 isi_gabut=['pergi mancing','nolep anime aja','buka ig, search @alwinata13, terus follow','traktiran satu angkatan','kerjain laprak','**TIDUR GOBLOK**','malem mingguan sama tangan','tadarus :D','tahajud :D','oh jomblo, pantes gabut','mendaki gunung, lewati lembah','Menonton Video (Terserah biru atau gak)','Streaming kajian','nonton SAO (sumpah wajib ditonton fix valid no debat)','**SIAPA LU SURUH SURUH GUA**','EMANG LO SIAPA','IDIH NYURUH NYURUH','gada saran','mboh','gatau','terserah']
 
-isi_cakepup = [':kissing_heart:',':stuck_out_tongue_closed_eye:',':flushed:',':heart_eyes:',':smiling_face_with_3_hearts:']
+isi_cakepup = [':kissing_heart:',':flushed:',':heart_eyes:',':smiling_face_with_3_hearts:']
 
 isi_cakepdown = [':nerd:',':confounded:',':zipper_mouth:',':face_vomiting:',':sick:']
 
@@ -55,7 +55,7 @@ class Bacotan(commands.Cog):
     async def gabut(self,ctx):
         await ctx.channel.send(random.choice(isi_gabut))
 
-    @commands.command(brief="Seberapa keren lu",aliases=['ckp'],help = "Seberapa keren sih elu?")
+    @commands.command(brief="Seberapa keren lu",aliases=['ckp'],help = "Seberapa keren sih elu?\nAlias = **ckp**")
     async def cakepgasih(self,ctx):
       x = random.randint(1,100)
       embed=discord.Embed(color=0xd4cf35)
