@@ -37,6 +37,7 @@ isi_ngapain=['lagi ngaji duong..',
 'lagi jadi wali nikahmu, tapi kalo gaada diganti ST12 aja gapapa **xixixi ngakak abiezz ckuakss**',
 'lagi mimpiin masa depan bersamamu']
 
+
 class tag(commands.Cog):
     def __init__(self, bot):
         self.bot = bot

@@ -10,7 +10,7 @@ isi_gatcha=["Menurut saya sih A",'Condong ke B sih','Menurut bot jawabannya adal
 isi_gabut=['pergi mancing','nolep anime aja','buka ig, search @alwinata13, terus follow','traktiran satu angkatan','kerjain laprak','**TIDUR GOBLOK**','malem mingguan sama tangan','tadarus :D','tahajud :D','oh jomblo, pantes gabut','mendaki gunung, lewati lembah','Menonton Video (Terserah biru atau gak)','Streaming kajian','nonton SAO (sumpah wajib ditonton fix valid no debat)','**SIAPA LU SURUH SURUH GUA**','EMANG LO SIAPA','IDIH NYURUH NYURUH','gada saran','mboh','gatau','terserah']
 
 
-class bacotan(commands.Cog):
+class Bacotan(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
         
@@ -52,4 +52,4 @@ class bacotan(commands.Cog):
         await ctx.channel.send(random.choice(isi_gabut))
 
 def setup(bot):
-    bot.add_cog(bacotan(bot))
+    bot.add_cog(Bacotan(bot))
