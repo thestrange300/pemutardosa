@@ -54,7 +54,7 @@ class Joke(commands.Cog):
 
     @commands.command(brief="meme fresh dari reddit",help = "ya isinya meme dari reddit")
     async def meme(self,ctx):
-        embed=discord.Embed(title=sr['title'],description=f"**Subreddit** : {sr['subreddit']}", color=discord.Color.pink)
+        embed=discord.Embed(title=sr['title'],description=f"**Subreddit** : {sr['subreddit']}", color=0x8000ff)
         embed.set_image(url = sr['url'])
         embed.set_footer(text=f" 👍 {sr['ups']}")
         reloadsr(self)

@@ -28,9 +28,30 @@ def reloadru(self):
 
 ru = randomuser(0)
 
+def excuse(self):
+  req = requests.get("https://api.devexcus.es/")
+  y= req.json()
+  return (y)
+
+def reloadex(self):
+  global ex
+  ex = excuse(0)
+
+ex = excuse(0)
+
 class Random(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
+
+    #Menjawab Pertanyaan Gatcha ABCDE
+    @commands.command(brief="untuk kalian yg hopeless (cuma bisa A,B,C,D,E)",help = "ya buat gatcha, apalagi")
+    async def gatcha(self,ctx):
+        await ctx.channel.send(random.choice(isi_gatcha))
+
+    #Menjawab Pertanyaan Gabut
+    @commands.command(brief="saran untuk kalian yang gabut",help = "guabut betul kalian sampe cari disini")
+    async def gabut(self,ctx):
+        await ctx.channel.send(random.choice(isi_gabut))
 
     @commands.command(brief="usage = wur <text> ",help = "What's Ur Robot bakalan nampilin robot random sesuai textmu.\n Usage = **wur <text>**")
     async def wur(self,ctx,*,question):
@@ -39,17 +60,6 @@ class Random(commands.Cog):
         embed.set_image(url = tmp)
         embed.set_footer(text="Pengingat Dosa",icon_url=self.bot.user.avatar_url) 
         await ctx.channel.send(embed=embed) 
-    
-    #CAKEP GA SEH
-    @commands.command(brief="Seberapa keren lu",aliases=['ckp'],help = "Seberapa keren sih elu?\nAlias = **ckp**")
-    async def cakepgasih(self,ctx):
-      x = random.randint(1,100)
-      embed=discord.Embed(color=0xff4000)
-      if x > 60 :
-        embed.add_field(name="**CAKEPMETER**",value=f"Tingkat kecakepan {ctx.author.mention} adalah {x}/100 {random.choice(isi_cakepup)}", inline=False)
-      else :
-        embed.add_field(name="** CAKEPMETER **",value=f"Tingkat kecakepan {ctx.author.mention} adalah {x}/100 {random.choice(isi_cakepdown)}", inline=False)
-      await ctx.channel.send(embed=embed)
 
     #RANDOM USER GENERATOR
     @commands.command(brief="generate random user",aliases = ['ru'], help = "generate sebuah profil secara random\nAlias = **ru**")
@@ -61,15 +71,23 @@ class Random(commands.Cog):
         print (ru)
         await ctx.channel.send(embed=embed)  
 
-    #Menjawab Pertanyaan Gatcha ABCDE
-    @commands.command(brief="untuk kalian yg hopeless (cuma bisa A,B,C,D,E)",help = "ya buat gatcha, apalagi")
-    async def gatcha(self,ctx):
-        await ctx.channel.send(random.choice(isi_gatcha))
+    #CAKEP GA SEH
+    @commands.command(brief="Seberapa keren lu",aliases=['ckp'],help = "Seberapa keren sih elu?\nAlias = **ckp**")
+    async def cakepgasih(self,ctx):
+      x = random.randint(1,100)
+      embed=discord.Embed(color=0xff4000)
+      if x > 60 :
+        embed.add_field(name="**CAKEPMETER**",value=f"Tingkat kecakepan {ctx.author.mention} adalah {x}/100 {random.choice(isi_cakepup)}", inline=False)
+      else :
+        embed.add_field(name="** CAKEPMETER **",value=f"Tingkat kecakepan {ctx.author.mention} adalah {x}/100 {random.choice(isi_cakepdown)}", inline=False)
+      await ctx.channel.send(embed=embed)
 
-    #Menjawab Pertanyaan Gabut
-    @commands.command(brief="saran untuk kalian yang gabut",help = "guabut betul kalian sampe cari disini")
-    async def gabut(self,ctx):
-        await ctx.channel.send(random.choice(isi_gabut))
+    @commands.command(brief="butuh alasan?? ini solusinya", aliases = ['ex'],help = "butuh alasan?? ini solusinya\nAlias : **ex**")
+    async def excuse(self,ctx):
+        embed=discord.Embed(title=f"Alasan :",description=f"{ex['text']}", color=0xff4000)
+        embed.set_footer(text="Pengingat Dosa",icon_url=self.bot.user.avatar_url)
+        reloadex(self)
+        await ctx.channel.send(embed=embed)    
 
 def setup(bot):
     bot.add_cog(Random(bot))
