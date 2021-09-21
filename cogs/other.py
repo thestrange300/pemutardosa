@@ -34,6 +34,6 @@ class Other(commands.Cog):
         embed.set_thumbnail(url=ctx.guild.icon_url)
 
         await ctx.channel.send(embed=embed)
-
+        
 def setup(bot):
     bot.add_cog(Other(bot))

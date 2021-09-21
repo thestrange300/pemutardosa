@@ -40,7 +40,9 @@ class MyHelpCommand(commands.HelpCommand):
     embed.add_field(name=f"{command.name}",value=f"{command.help}",inline = False)
     await self.get_destination().send(embed=embed)
 
-bot = commands.Bot(command_prefix='pd ',help_command = MyHelpCommand())
+intents = discord.Intents.default()
+intents.members = True
+bot = commands.Bot(command_prefix='pd ',help_command = MyHelpCommand(),intents=intents)
 
 ####BOT STARTUP ####
 @bot.event
