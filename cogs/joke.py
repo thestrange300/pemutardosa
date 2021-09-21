@@ -38,7 +38,7 @@ class Joke(commands.Cog):
     #JOKES       
     @commands.command(brief="jokesnya enggres sih (NSFW Beware)",aliases=['jk'],help = "intinya sih jokes, tapi kadang-kadang suka kelewatan emang")
     async def joke(self,ctx):
-        embed=discord.Embed(color=0xf10971)
+        embed=discord.Embed(color=0x8000ff)
         embed.add_field(name="Jokes hari ini :",value=jokesulang(self), inline=True)
         await ctx.channel.send(embed=embed)
         
@@ -48,26 +48,18 @@ class Joke(commands.Cog):
     #Menjawab Pertanyaan Random
     @commands.command(brief="jokes bapack bapack",aliases=['dj'],help = "isinya cuma jokes bapack-bapack sih")
     async def dadjoke(self,ctx):
-        embed=discord.Embed(color=0xf10971)
+        embed=discord.Embed(color=0x8000ff)
         embed.add_field(name="Jokes bapack hari ini :",value=dadjoke(self), inline=True)     
         await ctx.channel.send(embed=embed)  
 
     @commands.command(brief="meme fresh dari reddit",help = "ya isinya meme dari reddit")
     async def meme(self,ctx):
-        embed=discord.Embed(title=sr['title'],description=f"**Subreddit** : {sr['subreddit']}", color=0x8271d6)
+        embed=discord.Embed(title=sr['title'],description=f"**Subreddit** : {sr['subreddit']}", color=discord.Color.pink)
         embed.set_image(url = sr['url'])
         embed.set_footer(text=f" 👍 {sr['ups']}")
         reloadsr(self)
         await ctx.channel.send(embed=embed)    
         
-    @commands.command(brief="usage = wur <text> ",help = "What's Ur Robot bakalan nampilin robot random sesuai textmu. Usage = wur <text>")
-    async def wur(self,ctx,*,question):
-        embed=discord.Embed(title=f"Robot dari {question}",color=0x56f74b)
-        tmp= f"https://robohash.org/{question}"
-        embed.set_image(url = tmp)
-        embed.set_footer(text="Pengingat Dosa",icon_url=self.bot.user.avatar_url) 
-        await ctx.channel.send(embed=embed) 
-
 
 def setup(bot):
     bot.add_cog(Joke(bot))
