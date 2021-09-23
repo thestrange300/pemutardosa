@@ -34,6 +34,12 @@ class Other(commands.Cog):
         embed.set_thumbnail(url=ctx.guild.icon_url)
 
         await ctx.channel.send(embed=embed)
+
+    @commands.command(brief="panjang umur kebebasan",help = "Panjang umur kebebasan!!!!")
+    async def ip(self,ctx):
+        embed = discord.Embed(title=f"KEPAK SAYAP KEBEBASAN", description="Puja banteng ajaib", color=0xff0505)
+        embed.set_image(url = 'https://awsimages.detik.net.id/community/media/visual/2019/04/15/0ed3f774-4eb9-4275-b7f2-9b514f9676e9_43.jpeg?w=700&q=90')
+        await ctx.channel.send(embed=embed) 
         
 def setup(bot):
     bot.add_cog(Other(bot))
